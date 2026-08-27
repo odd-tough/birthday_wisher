@@ -29,7 +29,7 @@ for i in range(len(row)):
             first_line = read.replace("[NAME]", name_of_birthday)
             print(first_line)
         my_email=os.environ.get("my_email")
-        password=os.envirom.get("my_password")
+        password=os.environ.get("my_password")
 
         connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         connection.login(user=my_email, password=password)
