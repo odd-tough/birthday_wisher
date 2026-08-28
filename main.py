@@ -33,8 +33,10 @@ for i in range(len(row)):
 
         connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email, to_addrs="smariy98@myyahoo.com",
+        connection.sendmail(from_addr=my_email, to_addrs="smariy98@yahoo.com",
                             msg=f"subject:Happy Birthday!\n\n{first_line} ")
+print("EMAIL:", EMAIL)
+print("PASSWORD:", PASSWORD)
         connection.close()
 
 
