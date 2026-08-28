@@ -1,26 +1,33 @@
-name: Birthday Wisher
+name: Birthday Email Sender
 
 on:
+  workflow_dispatch:   # manual run
   schedule:
-    - cron: '0 9 * * *'
-  workflow_dispatch:
+    - cron: "0 3 * * *"   # runs daily (UTC) → ~8:30 AM India
 
 jobs:
-  run-birthday-wisher:
+  send-email:
     runs-on: ubuntu-latest
+
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install pandas python-dotenv
+
+      - name: Run birthday script
+        run: python main.py
 
       - name: Run birthday wisher
         run: python main.py
