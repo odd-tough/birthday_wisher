@@ -16,7 +16,7 @@ with open("birthdays.csv","r") as file:
 for i in range(len(row)):
     day_of_birthday =row[i].split(",")[4].replace("\n","")
     month_of_birthday=row[i].split(",")[3].replace("\n","")
-    email_of_birthday=row[i].split(",")[2].replace("\n","")
+    email_of_birthday=row[i].split(",")[1].replace("\n","")
     print(day_of_birthday)
     if day_of_birthday=="day" and month_birthday=="month":
         continue
