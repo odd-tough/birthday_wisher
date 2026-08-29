@@ -36,8 +36,7 @@ for i in range(len(row)):
         connection.sendmail(from_addr=my_email, to_addrs="smariy98@yahoo.com",
                             msg=f"subject:Happy Birthday!\n\n{first_line} ")
         connection.close()
-print("EMAIL:", my_email)
-print("PASSWORD:", my_password)
+
         
 
 
