@@ -18,7 +18,7 @@ for i in range(len(row)):
     month_of_birthday=row[i].split(",")[3].replace("\n","")
     email_of_birthday=row[i].split(",")[1].replace("\n","")
     print(day_of_birthday)
-    if day_of_birthday=="day" and month_birthday=="month":
+    if day_of_birthday=="day" and month_of_birthday=="month":
         continue
 
     if int(day_of_birthday) == day and int(month_of_birthday) == month:
