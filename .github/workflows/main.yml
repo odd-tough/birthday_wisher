@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      EMAIL: ${{ secrets.MY_EMAIL }}
-      PASSWORD: ${{ secrets.MY_PASSWORD }}
+      MY_EMAIL: ${{ secrets.MY_EMAIL }}
+      MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
 
     steps:
       - name: Checkout repository
