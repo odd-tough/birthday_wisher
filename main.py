@@ -35,8 +35,8 @@ for i in range(len(row)):
         connection.login(user=my_email, password=password)
         connection.sendmail(from_addr=my_email, to_addrs="smariy98@yahoo.com",
                             msg=f"subject:Happy Birthday!\n\n{first_line} ")
-        print("my_email":my_email)
-        print("password":password)
+        print("my_email",my_email)
+        print("password",password)
         connection.close()
 
         
