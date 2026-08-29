@@ -15,12 +15,13 @@ with open("birthdays.csv","r") as file:
     print(row)
 for i in range(len(row)):
     day_of_birthday =row[i].split(",")[4].replace("\n","")
+    month_of_birthday=row[i].split(",")[3].replace("\n","")
+    email_of_birthday=row[i].split(",")[2].replace("\n","")
     print(day_of_birthday)
-    if day_of_birthday=="day":
+    if day_of_birthday=="day" and month_birthday=="month":
         continue
 
-
-    if int(day_of_birthday) == day:
+    if int(day_of_birthday) == day and int(month_of_birthday) == month:
         name_of_birthday=row[i].split(",")[0]
         rand=random.randint(1,3)
 
@@ -33,7 +34,7 @@ for i in range(len(row)):
 
         connection = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email, to_addrs="smariyamkt@gmail.com",
+        connection.sendmail(from_addr=my_email,to_addrs=email_of_birthday,
                             msg=f"subject:Happy Birthday!\n\n{first_line} ")
         print("my_email",my_email)
         print("password",password)
